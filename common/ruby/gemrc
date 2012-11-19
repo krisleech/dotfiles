@@ -1,0 +1,5 @@
+rdoc: --inline-source --line-numbers --format=html --template=hanna
+gem: --no-ri --no-rdoc
+:sources:
+- http://rubygems.org
+- http://rubygems.torquebox.org

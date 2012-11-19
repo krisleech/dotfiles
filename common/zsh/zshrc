@@ -1,0 +1,67 @@
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_THEME="gallois"
+export EDITOR=/usr/bin/vim
+export TERM=xterm-256color
+
+# oh-my-zsh
+plugins=(git git-flow brew rails3 bundler gem rvm osx)
+source $ZSH/oh-my-zsh.sh
+
+# Java / Torquebox / JRuby
+export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
+export ECLIPSE_HOME=/Applications/eclipse
+
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/Users/kris/.rvm/bin:$JRUBY_HOME/bin
+
+# fix rvm with zsh
+unsetopt auto_name_dirs
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  
+
+# Allow rvm to work with iTerm2
+__rvm_project_rvmrc
+# Enable RVM cd functionality
+export rvm_project_rvmrc=1
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Run an ClamAV scan on Downloads
+alias avdown="freshclam --quiet; clamscan -r -i ~/Downloads | grep Infected"
+
+# Set correct term for tmux so solarized theme works in vim
+alias tmux="TERM=screen-256color-bce tmux"
+alias cls='clear'
+
+# Rails aliases
+alias rs="rspec spec"
+alias cuke="cucumber features"
+alias rr="rake routes"
+alias rrg="rake routes | grep "
+
+# Git aliases
+alias gb="git checkout -b"
+alias gst="git status -sb"
+
+# Browser aliases
+alias 8080="open http://localhost:8080"
+alias 8082="open http://localhost:8082"
+alias 3000="open http://localhost:3000"
+alias 9000="open http://localhost:9000"
+
+# prevent zsh: no matches found
+alias rake='noglob rake'
+
+# Project aliases
+source ~/.zshrc.projects
+
+# Tokens and the like
+source ~/.zshrc.private
+
+# Set vi mode, ESC will allow hjkl movements
+set -o vi
+
+# https://github.com/clvv/fasd
+eval "$(fasd --init auto)"
+
+# Ctrl+R searches history
+bindkey '^R' history-incremental-search-backward

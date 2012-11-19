@@ -1,0 +1,4 @@
+export rvm_path="/Users/kris/.rvm"
+
+# Turn on cd functionality
+rvm_project_rvmrc=1
