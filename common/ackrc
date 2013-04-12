@@ -30,6 +30,7 @@
 --ignore-dir=.svn
 --ignore-dir=.idea
 --ignore-dir=nbproject
+--ignore-dir=coverage
 
 --notags
 --noimage
