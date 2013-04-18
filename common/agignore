@@ -1,0 +1,10 @@
+*.log
+log
+tags
+solr
+vendor
+tmp
+public
+db
+.git
+.bundle
