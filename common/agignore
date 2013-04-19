@@ -5,6 +5,7 @@ solr
 vendor
 tmp
 public
+coverage
 db
 .git
 .bundle
