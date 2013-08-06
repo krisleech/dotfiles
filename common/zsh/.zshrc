@@ -37,34 +37,6 @@ alias tmux="TERM=screen-256color-bce tmux"
 # old skool BASIC style
 alias cls='clear'
 
-# Builtin aliases
-# make grep case insensitive
-alias grep="grep -i"
-
-# Rails aliases
-alias rs="rspec spec"
-alias cuke="cucumber features"
-alias rr="rake routes"
-alias rrg="rake routes | grep"
-alias rtg="rake -T | grep"
-alias bi="export LC_CTYPE=en_GB.UTF-8; bundle install"
-alias be="bundle exec"
-alias rdbm="rake db:migrate"
-alias rdbtp="rake db:test:prepare"
-alias td="tail -f log/development.log"
-
-# Git aliases
-alias gb="git checkout -b"
-alias gst="git status -sb"
-alias gcl='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-alias gpo="git pull origin"
-
-# Browser aliases
-alias 8080="open http://localhost:8080"
-alias 8082="open http://localhost:8082"
-alias 3000="open http://localhost:3000"
-alias 9000="open http://localhost:9000"
-
 # postrgres
 
 alias start_postgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
@@ -72,11 +44,14 @@ alias start_postgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgr
 # prevent zsh: no matches found
 alias rake='noglob rake'
 
+# General aliases
+source ~/.aliases
+
 # Project aliases
-source ~/.zshrc.projects
+source ~/.projects
 
 # Tokens and the like
-source ~/.zshrc.private
+source ~/.private
 
 # Set vi mode, ESC will allow hjkl movements
 set -o vi

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo 'Installing common dotfiles...'
+
+cd ~/dotfiles/common
+
+for dir in ~/dotfiles/common/*/
+do
+  dir=${dir%*/}
+  stow --target=$HOME ${dir##*/} "$@"
+done
