@@ -12,7 +12,7 @@ source $ZSH/oh-my-zsh.sh
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
 export ECLIPSE_HOME=/Applications/eclipse
 
-export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/Users/kris/.rvm/bin:$JRUBY_HOME/bin
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/Users/kris/.rvm/bin:$JRUBY_HOME/bin:$PATH
 
 # fix rvm with zsh
 unsetopt auto_name_dirs
