@@ -4,6 +4,8 @@ export ZSH_THEME="gallois"
 export EDITOR=/usr/bin/vim
 export TERM=xterm-256color
 export LC_CTYPE=en_GB.UTF-8
+export LESS="-X" # http://www.shallowsky.com/linux/noaltscreen.html
+
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -14,20 +16,20 @@ export ECLIPSE_HOME=/Applications/eclipse
 
 export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/Users/kris/.rvm/bin:$JRUBY_HOME/bin:$PATH
 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" ]]
+
 # fix rvm with zsh
 unsetopt auto_name_dirs
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  
 
 # Allow rvm to work with iTerm2
 __rvm_project_rvmrc
 # Enable RVM cd functionality
 export rvm_project_rvmrc=1
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # path to gem executables for system Ruby
 PATH=/usr/local/Cellar/ruby/1.9.3-p194/bin:$PATH
+
+alias :qa="echo 'Slow down, your in the shell'"
 
 # Run an ClamAV scan on Downloads
 alias avdown="freshclam --quiet; clamscan -r -i ~/Downloads | grep Infected"
@@ -61,3 +63,9 @@ set -o vi
 
 # Ctrl+R searches history
 bindkey '^R' history-incremental-search-backward
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# force rvmrc to be loaded for new shells (i.e. tmux)
+# http://stackoverflow.com/questions/5838824/how-do-i-keep-my-rvm-gemset-while-using-tmux
+cd ..;cd -
